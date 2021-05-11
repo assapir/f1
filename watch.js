@@ -22,7 +22,7 @@ esbuild.serve({
       )
     const path = ~url.split('/').pop().indexOf('.') ? url : `/index.html` //for PWA with router
     req.pipe(
-      request({ hostname: '0.0.0.0', port: 8000, path, method, headers }, (prxRes) => {
+      request({ hostname: server.host, port: server.port, path, method, headers }, (prxRes) => {
         res.writeHead(prxRes.statusCode, prxRes.headers)
         prxRes.pipe(res, { end: true })
       }),
@@ -48,8 +48,11 @@ esbuild
   .build({
     entryPoints: ['src/index.jsx'],
     outdir: 'public/js',
+    sourcemap: 'inline',
+    logLevel: 'info',
     bundle: true,
-    banner: { js: ' (() => new EventSource("/esbuild").onmessage = () => location.reload())();' },
+    target: ['esnext'],
+    footer: { js: '(() => new EventSource("/esbuild").onmessage = () => location.reload())();' },
     watch: {
       onRebuild(error, result) {
         clients.forEach((res) => res.write('data: update\n\n'))

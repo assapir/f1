@@ -1,5 +1,10 @@
 import * as React from 'react';
+import Clock from './clock';
 
 export default App = () => {
-    return <h1>Hello World!</h1>
+    return (
+        <div>
+            <Clock />
+        </div>
+    );
 }

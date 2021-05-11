@@ -3,6 +3,7 @@ require('esbuild').build({
     bundle: true,
     outfile: 'build/index.js',
     minify: true,
+    sourcemap: 'inline',
     define: {
       NODE_ENV: 'production'
     }
