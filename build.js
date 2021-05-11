@@ -1,7 +1,7 @@
 require('esbuild').build({
     entryPoints: ['src/index.jsx'],
     bundle: true,
-    outfile: 'build/out.js',
+    outfile: 'build/index.js',
     minify: true,
     define: {
       NODE_ENV: 'production'
