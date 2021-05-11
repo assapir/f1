@@ -6,10 +6,9 @@ export default App = () => {
     const [show, setShow] = useState(true)
 
 
-    const clock = show ? <Clock /> : null;
     return (
         <div>
-            {clock}
+            {show ? <Clock /> : null}
             <Button onClick={() => setShow(!show)} text={show ? 'Hide' : 'Show'} />
         </div>
     );

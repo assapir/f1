@@ -8,9 +8,9 @@ export default Clock = () => {
     }
 
     useEffect(() => {
-        const timerId = setInterval(() => tick(), 1000);
+        const timerId = setInterval(tick, 1000);
         return () => clearInterval(timerId);
-    })
+    }, [])
 
     return (
         <h1>It is {date.toLocaleTimeString(navigator.languages)}</h1>
