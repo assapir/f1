@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-export default Clock = (props) => {
+export default Clock = () => {
     const [date, setDate] = useState(new Date())
 
     const tick = () => {
