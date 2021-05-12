@@ -5,7 +5,7 @@ import TextForm from './TextForm';
 
 export default App = () => {
     const [show, setShow] = useState(true)
-    const [locale, setLocale] = useState('he')
+    const [locale, setLocale] = useState(navigator.language)
 
     const onLocaleInput = e => {
         setLocale(e.target[0].value);
