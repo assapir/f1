@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import Clock from './Clock';
-import Button from './Button';
-import TextForm from './TextForm';
+import Clock from './components/Clock';
+import Button from './components/Button';
+import TextForm from './components/TextForm';
 
 export default App = () => {
     const [show, setShow] = useState(true)
