@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-export default Clock = ({ locale = navigator.language }) => {
+export default Clock = ({ locale }) => {
 const [date, setDate] = useState(new Date())
 
     const tick = () => {
