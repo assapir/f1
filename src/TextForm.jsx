@@ -8,15 +8,21 @@ export default TextForm = ({
 }) => {
     const [value, setValue] = useState(defaultValue);
 
-    const handleChange = (e) => {
+    const handleChange = e => {
         setValue(e.target.value)
     }
 
+    const handleSubmit = e => {
+        const input = e.target[0].value;
+        onSubmit(input);
+        e.preventDefault();
+    }
+
     return (
-        <form onSubmit={onSubmit}>
+        <form onSubmit={handleSubmit}>
             <label>
                 {label}
-                <input type='text' value={value} onChange={handleChange}/>
+                <input name='textValue' type='text' value={value} onChange={handleChange}/>
             </label>
             <input type='submit' value={buttonLabel} />
         </form>
