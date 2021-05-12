@@ -8,7 +8,7 @@ export default App = () => {
 
     return (
         <div>
-            {show && <Clock />}
+            {show && <Clock locale='he' />}
             <Button onClick={() => setShow(!show)} text={show ? 'Hide' : 'Show'} />
         </div>
     );
