@@ -50,7 +50,6 @@ esbuild
     outdir: 'public/js',
     sourcemap: 'inline',
     logLevel: 'info',
-    bundle: true,
     target: ['esnext'],
     footer: { js: '(() => new EventSource("/esbuild").onmessage = () => location.reload())();' },
     watch: {
